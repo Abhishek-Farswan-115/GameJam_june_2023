@@ -12,7 +12,7 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhkpv"]
-bg_color = Color(0.443137, 1, 0.670588, 0.207843)
+bg_color = Color(1, 0.345098, 0.270588, 0.411765)
 corner_radius_top_left = 10
 corner_radius_top_right = 20
 corner_radius_bottom_right = 10
@@ -27,6 +27,7 @@ corner_radius_bottom_left = 10
 
 [resource]
 default_font = ExtResource("1_d5v7x")
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
 Button/fonts/font = ExtResource("1_d5v7x")
 Button/styles/focus = SubResource("StyleBoxEmpty_xt4rh")
 Button/styles/hover = SubResource("StyleBoxFlat_gir71")
