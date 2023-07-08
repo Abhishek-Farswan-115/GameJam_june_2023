@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dt8nfbon23dfc"]
+
+[ext_resource type="PackedScene" uid="uid://ce8151hq5wonr" path="res://Resources/3D files/LP_Sword.glb" id="1_lehog"]
+
+[node name="LP_Sword" instance=ExtResource("1_lehog")]
