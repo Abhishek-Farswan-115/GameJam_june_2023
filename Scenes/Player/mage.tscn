@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dpa3f838kuw70"]
-
-[ext_resource type="PackedScene" uid="uid://q3gaire8s80x" path="res://Resources/3D files/Mage.fbx" id="1_vbxvt"]
-
-[node name="Mage" instance=ExtResource("1_vbxvt")]

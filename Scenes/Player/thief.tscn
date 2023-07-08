@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqsoi3ihuoox0"]
-
-[ext_resource type="PackedScene" uid="uid://jcm6q1g237bp" path="res://Resources/3D files/Thief.fbx" id="1_lb5t1"]
-
-[node name="Thief" instance=ExtResource("1_lb5t1")]

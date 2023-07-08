@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dw5o7pbamtgwh"]
-
-[ext_resource type="PackedScene" uid="uid://cfmj4rk8im0a6" path="res://Resources/3D files/Guard2.fbx" id="1_k506q"]
-
-[node name="Guard2" instance=ExtResource("1_k506q")]

@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bru7bpy7wv275"]
-
-[ext_resource type="PackedScene" uid="uid://bg5yrpxw1virn" path="res://Resources/3D files/Adventurer2.fbx" id="1_ltlm2"]
-
-[node name="Adventurer2" instance=ExtResource("1_ltlm2")]
