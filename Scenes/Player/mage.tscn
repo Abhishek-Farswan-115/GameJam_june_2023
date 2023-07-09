@@ -5,6 +5,8 @@
 
 [node name="mage" instance=ExtResource("1_et5s2")]
 script = ExtResource("2_0f8bi")
+move_speed = 5
+health = 50
 run_animation = "Wand_run"
 
 [node name="Armature" parent="." index="0"]

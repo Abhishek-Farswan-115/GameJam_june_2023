@@ -1,8 +1,44 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdwyakxhjle4"]
+[gd_scene load_steps=8 format=3 uid="uid://bmfq7oucgp1xn"]
 
 [ext_resource type="PackedScene" uid="uid://dxhw5c8fd5ap5" path="res://Resources/GLTF_character/Bow.glb" id="1_lm2dv"]
+[ext_resource type="Script" path="res://Scripts/weapon.gd" id="2_572ob"]
+[ext_resource type="PackedScene" uid="uid://c2l88doqav3ig" path="res://Scenes/Weapons/attack_range_highlight.tscn" id="2_wfgp4"]
+[ext_resource type="PackedScene" uid="uid://caan0u3eleb2" path="res://Scenes/Weapons/arrow.tscn" id="3_swpuw"]
+[ext_resource type="PackedScene" uid="uid://cvwu674wxakuu" path="res://Scenes/Weapons/scanner.tscn" id="5_s2naa"]
+[ext_resource type="AudioStream" uid="uid://wjj2x7gj7aw5" path="res://Audio/Impact/footstep_grass_001.ogg" id="6_nheql"]
+[ext_resource type="PackedScene" uid="uid://bbk675itx7mby" path="res://Scenes/Weapons/weapon_area.tscn" id="7_cahn3"]
 
-[node name="Bow" instance=ExtResource("1_lm2dv")]
+[node name="Bow" node_paths=PackedStringArray("aim_tile") instance=ExtResource("1_lm2dv")]
+script = ExtResource("2_572ob")
+attack_speed = 1.0
+projectile = ExtResource("3_swpuw")
+aim_tile = NodePath("AttackRange/MeshInstance3D3")
 
 [node name="Arro" parent="bow_Stator/Bow_002" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1681, 0)
+
+[node name="AttackRange" type="Node3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8, 0)
+
+[node name="MeshInstance3D2" parent="AttackRange" index="0" instance=ExtResource("2_wfgp4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+skeleton = NodePath("")
+
+[node name="MeshInstance3D3" parent="AttackRange" index="1" instance=ExtResource("2_wfgp4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+skeleton = NodePath("")
+
+[node name="MeshInstance3D4" parent="AttackRange" index="2" instance=ExtResource("2_wfgp4")]
+skeleton = NodePath("")
+
+[node name="Scanner" parent="." index="2" instance=ExtResource("5_s2naa")]
+
+[node name="CollisionPolygon3D" parent="Scanner" index="0"]
+polygon = PackedVector2Array(-2, 7, 2, 7, 2, 1, -2, 1)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="3"]
+stream = ExtResource("6_nheql")
+
+[node name="WeaponArea" parent="." index="4" instance=ExtResource("7_cahn3")]
+
+[editable path="Scanner"]

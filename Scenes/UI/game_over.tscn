@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://c3jbqbuh3guul"]
+[gd_scene load_steps=8 format=3 uid="uid://dbxu8dookkvbf"]
 
 [ext_resource type="Script" path="res://Scripts/game_over.gd" id="1_ito28"]
-[ext_resource type="SystemFont" path="res://Scenes/UI/new_system_font.tres" id="1_y2v6y"]
+[ext_resource type="SystemFont" uid="uid://i0jcaok61go0" path="res://Scenes/UI/new_system_font.tres" id="1_y2v6y"]
 [ext_resource type="Theme" uid="uid://crqddcmktcgn5" path="res://Scenes/UI/main_theme.tres" id="2_2kg7h"]
 [ext_resource type="AudioStream" uid="uid://bd0dd88ibsq35" path="res://Audio/UI/rollover5.ogg" id="4_bhwmw"]
 [ext_resource type="AudioStream" uid="uid://ucebh4e7gkes" path="res://Audio/UI/click5.ogg" id="5_03uwf"]

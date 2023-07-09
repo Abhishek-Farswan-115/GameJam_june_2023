@@ -5,6 +5,8 @@
 
 [node name="Adventurer2" instance=ExtResource("1_xsbea")]
 script = ExtResource("2_ub3wy")
+move_speed = 5
+health = 50
 run_animation = "Sword_run"
 
 [node name="Armature" parent="." index="0"]

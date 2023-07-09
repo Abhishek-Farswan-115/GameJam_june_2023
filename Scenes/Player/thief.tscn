@@ -5,7 +5,7 @@
 
 [node name="Thief" instance=ExtResource("1_xcpxt")]
 script = ExtResource("2_275ln")
-move_speed = 15
+health = 30
 run_animation = "Sword_run"
 
 [node name="Armature" parent="." index="0"]

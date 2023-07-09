@@ -5,7 +5,7 @@
 
 [node name="Guard2" instance=ExtResource("1_bq64n")]
 script = ExtResource("2_afd72")
-move_speed = 7
+move_speed = 2
 run_animation = "Sword_run"
 
 [node name="Armature" parent="." index="0"]

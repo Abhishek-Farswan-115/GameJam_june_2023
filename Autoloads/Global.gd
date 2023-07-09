@@ -1,7 +1,8 @@
 extends Node
 
 const Game_scene = {
-	"game world" : "res://Scenes/Level/level.tscn"
+	"game world" : "res://Scenes/Level/level.tscn",
+	"game over": "res://Scenes/UI/game_over.tscn",
 }
 
 var loading_screen = preload("res://Scenes/UI/loading_screen.tscn")

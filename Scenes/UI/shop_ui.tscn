@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://blmacn3rgeesc"]
+[gd_scene load_steps=13 format=3 uid="uid://cmxewlfkkcgj5"]
 
 [ext_resource type="Texture2D" uid="uid://bkwxix7344j5g" path="res://Images/panel.png" id="1_33imn"]
 [ext_resource type="Theme" uid="uid://crqddcmktcgn5" path="res://Scenes/UI/main_theme.tres" id="1_d1nar"]
@@ -53,11 +53,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Panel" type="Panel" parent="Control"]
 layout_mode = 0
 offset_top = 94.0
-offset_right = 449.0
+offset_right = 382.0
 offset_bottom = 650.0
 theme = SubResource("Theme_lhsn5")
 
@@ -92,7 +93,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 35.712
 offset_top = 94.0
-offset_right = -835.0
+offset_right = -934.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -111,16 +112,19 @@ theme_override_constants/separation = 80
 
 [node name="Bow" type="TextureButton" parent="Control/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("1_wh11q")
 stretch_mode = 3
 
 [node name="Cannon" type="TextureButton" parent="Control/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("2_y8pbw")
 stretch_mode = 3
 
 [node name="Bat" type="TextureButton" parent="Control/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_bqdmo")
 stretch_mode = 3
 
@@ -129,10 +133,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 225.0
-offset_top = 136.0
-offset_right = -782.0
-offset_bottom = -446.0
+offset_left = 182.0
+offset_top = 139.0
+offset_right = -825.0
+offset_bottom = -437.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_d1nar")
@@ -169,10 +173,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 225.0
-offset_top = 335.0
-offset_right = -782.0
-offset_bottom = -247.0
+offset_left = 182.0
+offset_top = 338.0
+offset_right = -825.0
+offset_bottom = -238.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_d1nar")
@@ -189,10 +193,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 225.0
-offset_top = 532.0
-offset_right = -782.0
-offset_bottom = -50.0
+offset_left = 182.0
+offset_top = 535.0
+offset_right = -825.0
+offset_bottom = -41.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_d1nar")

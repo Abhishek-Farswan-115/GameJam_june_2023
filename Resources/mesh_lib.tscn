@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://kipmf5mkhy02"]
+
+[ext_resource type="PackedScene" uid="uid://be1wx7ejk7wcl" path="res://Resources/KayKit_DungeonRemastered/floor_foundation_allsides.gltf.glb" id="1_rfc1f"]
+[ext_resource type="PackedScene" uid="uid://de71wepytqfiq" path="res://Resources/KayKit_DungeonRemastered/floor_dirt_small_A.gltf.glb" id="2_p4416"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_knavd"]
+size = Vector3(2, 2, 2)
+
+[node name="MeshLib" type="Node3D"]
+
+[node name="floor_foundation_allsides_gltf" parent="." instance=ExtResource("1_rfc1f")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="floor_foundation_allsides_gltf/floor_foundation_allsides" index="0"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor_foundation_allsides_gltf/floor_foundation_allsides/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_knavd")
+
+[node name="floor_dirt_small_A_gltf" parent="." instance=ExtResource("2_p4416")]
+
+[editable path="floor_foundation_allsides_gltf"]

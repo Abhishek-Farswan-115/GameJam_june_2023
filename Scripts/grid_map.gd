@@ -2,8 +2,8 @@
 extends GridMap
 
 
-const WALL_TILE: = 89
-const FLOOR_TILE: = 84
+const WALL_TILE: = 0
+const FLOOR_TILE: = 1
 
 @export var gen: = false:
 	set(_value):
