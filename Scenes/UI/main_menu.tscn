@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cm7liy7kfd6yw"]
+[gd_scene load_steps=9 format=3 uid="uid://cm7liy7kfd6yw"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_40gf5"]
 [ext_resource type="SystemFont" uid="uid://clmf1sqod3gd4" path="res://Scenes/UI/new_system_font.tres" id="1_qkoix"]
@@ -16,18 +16,6 @@ outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Shortcut" id="Shortcut_wedls"]
 events = [null]
-
-[sub_resource type="InputEventKey" id="InputEventKey_do72y"]
-device = -1
-keycode = 4194309
-
-[sub_resource type="InputEventKey" id="InputEventKey_8vsoa"]
-device = -1
-keycode = 32
-unicode = 32
-
-[sub_resource type="Shortcut" id="Shortcut_3dxwi"]
-events = [SubResource("InputEventKey_do72y"), SubResource("InputEventKey_8vsoa")]
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
@@ -123,16 +111,6 @@ theme_override_font_sizes/font_size = 30
 text = "HOW TO PLAY"
 icon_alignment = 1
 
-[node name="Settings_button" type="Button" parent="MarginContainer/VBoxContainer2/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 10
-theme = ExtResource("5_f7w8n")
-theme_override_font_sizes/font_size = 30
-shortcut = SubResource("Shortcut_3dxwi")
-text = "SETTINGS
-"
-icon_alignment = 1
-
 [node name="Quit_button" type="Button" parent="MarginContainer/VBoxContainer2/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 10
@@ -155,7 +133,5 @@ max_polyphony = 2
 [connection signal="pressed" from="MarginContainer/VBoxContainer2/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Start_button" to="." method="_on_start_button_pressed"]
 [connection signal="mouse_entered" from="MarginContainer/VBoxContainer2/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/HowTo" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer2/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/HowTo" to="." method="_on_how_to_pressed"]
-[connection signal="mouse_entered" from="MarginContainer/VBoxContainer2/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Settings_button" to="." method="_on_button_mouse_entered"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer2/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Settings_button" to="." method="_on_settings_button_pressed"]
 [connection signal="mouse_entered" from="MarginContainer/VBoxContainer2/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Quit_button" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer2/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Quit_button" to="." method="_on_quit_button_pressed"]
