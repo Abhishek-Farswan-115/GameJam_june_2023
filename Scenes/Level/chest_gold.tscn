@@ -6,7 +6,7 @@
 size = Vector3(1.55736, 1.31342, 0.967312)
 
 [node name="ChestGold" instance=ExtResource("1_gi0i7")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, 0, 0, 0)
 
 [node name="Area3D" type="Area3D" parent="." index="1"]
 collision_layer = 2

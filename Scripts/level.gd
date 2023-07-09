@@ -9,10 +9,7 @@ extends Node3D
 # 0: top, 1: middle, 2: bottom
 var _path: Array[Array]
 var _adventurers: = [
-#	preload("res://Scenes/Player/adventurer_1.tscn"),
 	preload("res://Scenes/Player/adventurer_2.tscn"),
-	preload("res://Scenes/Player/guard_1.tscn"),
-	preload("res://Scenes/Player/guard_2.tscn"),
 	preload("res://Scenes/Player/mage.tscn"),
 	preload("res://Scenes/Player/thief.tscn"),
 ]
@@ -51,6 +48,11 @@ func _start_wave() -> void:
 		await get_tree().create_timer(2.0).timeout
 	wave_count += 1
 	wave_timer.start()
+	if wave_count == 5:
+		_adventurers.append_array([
+			preload("res://Scenes/Player/guard_1.tscn"),
+			preload("res://Scenes/Player/guard_2.tscn"),
+		])
 
 
 func _on_wave_timer_timeout() -> void:

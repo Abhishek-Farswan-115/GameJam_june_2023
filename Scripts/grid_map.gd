@@ -114,7 +114,7 @@ func _set_item() -> void:
 	var last_point: = _middle_path[_middle_path.size() - 1]
 	chest.global_position = to_global(map_to_local(Vector3i(last_point.x, 0, last_point.y)))
 	
-	for i in 10:
+	for i in 20:
 		var torch: = preload("res://Scenes/Level/torch.tscn").instantiate()
 		on_path.add_child(torch)
 		var rand_point: = _get_random_point_next_to_path(3)
