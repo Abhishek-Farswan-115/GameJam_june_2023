@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=6 format=3 uid="uid://crqddcmktcgn5"]
 
-[ext_resource type="SystemFont" uid="uid://i0jcaok61go0" path="res://Scenes/UI/new_system_font.tres" id="1_d5v7x"]
+[ext_resource type="SystemFont" uid="uid://clmf1sqod3gd4" path="res://Scenes/UI/new_system_font.tres" id="1_d5v7x"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xt4rh"]
 

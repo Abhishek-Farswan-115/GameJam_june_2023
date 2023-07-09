@@ -29,6 +29,10 @@ gdscript/warnings/narrowing_conversion=0
 
 window/size/resizable=false
 
+[gui]
+
+theme/custom_font="res://Fonts/BlackOpsOne-Regular.ttf"
+
 [input]
 
 up={
