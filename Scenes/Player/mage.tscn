@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://tfp260l4alxq"]
+
+[ext_resource type="PackedScene" uid="uid://dvn3k7ipnwj1u" path="res://Resources/GLTF_character/mage.glb" id="1_et5s2"]
+[ext_resource type="Script" path="res://Scripts/adventurers/adventurer.gd" id="2_0f8bi"]
+
+[node name="mage" instance=ExtResource("1_et5s2")]
+script = ExtResource("2_0f8bi")
+run_animation = "Wand_run"

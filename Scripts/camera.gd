@@ -5,14 +5,22 @@ extends Camera3D
 @export var max_zoom: = 20.0
 @export var min_zoom: = 5.0
 
+@onready var destination: = position
+@onready var zoom: = position.y
+
 
 func _process(delta: float) -> void:
-	position.x += (Input.get_action_strength("right") - Input.get_action_strength("left")) * delta * speed * size
-	position.z += (Input.get_action_strength("down") - Input.get_action_strength("up")) * delta * speed * size
+	destination.x += (Input.get_action_strength("right") - Input.get_action_strength("left")) * delta * speed * size
+	destination.z += (Input.get_action_strength("down") - Input.get_action_strength("up")) * delta * speed * size
+	position.x = lerpf(position.x, destination.x, delta * 40)
+	position.z = lerpf(position.z, destination.z, delta * 40)
+	position.y = lerpf(position.y, zoom, delta * 10)
 
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("zoom_in"):
-		position.y = max(position.y - 1, min_zoom)
+		if zoom / 1.5 >= min_zoom:
+			zoom /= 1.5
 	elif event.is_action_pressed("zoom_out"):
-		position.y = min(position.y + 1, max_zoom)
+		if zoom * 1.5 <= max_zoom:
+			zoom *= 1.5

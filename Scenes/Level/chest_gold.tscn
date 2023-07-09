@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4lhrtak2efmq"]
+
+[ext_resource type="PackedScene" uid="uid://csjinnvfoneiv" path="res://Resources/KayKit_DungeonRemastered/chest_gold.glb" id="1_gi0i7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f4ygp"]
+size = Vector3(1.55736, 1.31342, 0.967312)
+
+[node name="ChestGold" instance=ExtResource("1_gi0i7")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="." index="1"]
+collision_layer = 2
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.624551, 0)
+shape = SubResource("BoxShape3D_f4ygp")

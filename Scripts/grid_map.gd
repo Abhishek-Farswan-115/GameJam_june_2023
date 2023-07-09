@@ -2,6 +2,9 @@
 extends GridMap
 
 
+const WALL_TILE: = 89
+const FLOOR_TILE: = 84
+
 @export var gen: = false:
 	set(_value):
 		generate()
@@ -24,27 +27,53 @@ func _init() -> void:
 	_noise.frequency = 0.02
 
 
-func _ready() -> void:
-	for x in map_width:
-		for y in map_height: 
-			set_cell_item(Vector3i(x, 0, y), 89)
-	generate()
-
-
-func generate() -> void:
+func generate() -> Array[Array]:
 	_reset()
 	_create_path()
 	_set_item()
+	var global_path: Array[Array] = [[], [], []]
+	global_path[1] = Array(_middle_path)
+	
+	global_path[0].push_back(_middle_path[0] + Vector2.UP)
+	global_path[2].push_back(_middle_path[0] + Vector2.DOWN)
+	while true:
+		var end: = false
+		for i in [Vector2.RIGHT, Vector2.UP, Vector2.LEFT, Vector2.DOWN]:
+			var v: Vector2 = global_path[0].back() + i
+			if v == _middle_path[_middle_path.size() - 1]:
+				end = true
+			if get_cell_item(Vector3(v.x, 0, v.y)) == FLOOR_TILE and !_middle_path.has(v) and !global_path[0].has(v):
+				global_path[0].push_back(v)
+		if end:
+			global_path[0].pop_back()
+			break
+	while true:
+		var end: = false
+		for i in [Vector2.RIGHT, Vector2.UP, Vector2.LEFT, Vector2.DOWN]:
+			var v: Vector2 = global_path[2].back() + i
+			if v == _middle_path[_middle_path.size() - 1]:
+				end = true
+			if get_cell_item(Vector3(v.x, 0, v.y)) == FLOOR_TILE and !_middle_path.has(v) and !global_path[2].has(v):
+				global_path[2].push_back(v)
+		if end:
+			global_path[2].pop_back()
+			break
+	global_path[0] = global_path[0].map(func(i: Vector2): return to_global(map_to_local(Vector3(i.x, 0, i.y))))
+	global_path[1] = global_path[1].map(func(i: Vector2): return to_global(map_to_local(Vector3(i.x, 0, i.y))))
+	global_path[2] = global_path[2].map(func(i: Vector2): return to_global(map_to_local(Vector3(i.x, 0, i.y))))
+	return global_path
 
 
 func _reset() -> void:
-	for i in _path:
-		set_cell_item(Vector3i(i.x, 0, i.y), 89)
-	_noise.frequency = 0.05
-	_noise.seed = randi()
+	for x in map_width:
+		for y in map_height: 
+			set_cell_item(Vector3i(x, 0, y), WALL_TILE)
 	
 	for child in on_path.get_children():
 		child.queue_free()
+	
+	_noise.frequency = 0.05
+	_noise.seed = randi()
 
 
 func _create_path() -> void:
@@ -76,11 +105,11 @@ func _create_path() -> void:
 	_path = coords.keys()
 	
 	for i in coords:
-		set_cell_item(Vector3i(i.x, 0, i.y), 84)
+		set_cell_item(Vector3i(i.x, 0, i.y), FLOOR_TILE)
 
 
 func _set_item() -> void:
-	var chest: = preload("res://Resources/KayKit_DungeonRemastered/chest_gold.glb").instantiate()
+	var chest: = preload("res://Scenes/Level/chest_gold.tscn").instantiate()
 	on_path.add_child(chest)
 	var last_point: = _middle_path[_middle_path.size() - 1]
 	chest.global_position = to_global(map_to_local(Vector3i(last_point.x, 0, last_point.y)))
