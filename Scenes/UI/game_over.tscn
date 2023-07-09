@@ -1,0 +1,118 @@
+[gd_scene load_steps=8 format=3 uid="uid://c3jbqbuh3guul"]
+
+[ext_resource type="Script" path="res://Scripts/game_over.gd" id="1_ito28"]
+[ext_resource type="SystemFont" path="res://Scenes/UI/new_system_font.tres" id="1_y2v6y"]
+[ext_resource type="Theme" uid="uid://crqddcmktcgn5" path="res://Scenes/UI/main_theme.tres" id="2_2kg7h"]
+[ext_resource type="AudioStream" uid="uid://bd0dd88ibsq35" path="res://Audio/UI/rollover5.ogg" id="4_bhwmw"]
+[ext_resource type="AudioStream" uid="uid://ucebh4e7gkes" path="res://Audio/UI/click5.ogg" id="5_03uwf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hk5lq"]
+bg_color = Color(0.65098, 0.85098, 0.721569, 0.364706)
+border_width_left = 20
+border_width_right = 20
+border_color = Color(0.8, 0.298039, 0.317647, 1)
+border_blend = true
+corner_radius_top_left = 100
+corner_radius_bottom_right = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_nq2bk"]
+font_size = 60
+font_color = Color(0.803922, 0.396078, 0.34902, 1)
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ito28")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1108.0
+offset_bottom = 605.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0980392, 0.0980392, 0.0980392, 0.392157)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 347.0
+offset_top = 8.0
+offset_right = 765.0
+offset_bottom = 583.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hk5lq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 100
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_y2v6y")
+theme_override_font_sizes/font_size = 0
+text = "Game Over"
+label_settings = SubResource("LabelSettings_nq2bk")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Retry" type="Button" parent="Panel/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme = ExtResource("2_2kg7h")
+text = "RETRY
+"
+
+[node name="Main Menu" type="Button" parent="Panel/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme = ExtResource("2_2kg7h")
+text = "MAIN MENU"
+
+[node name="Quit" type="Button" parent="Panel/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme = ExtResource("2_2kg7h")
+text = "QUIT"
+
+[node name="sound" type="Node" parent="."]
+
+[node name="button_hover_sound" type="AudioStreamPlayer" parent="sound"]
+stream = ExtResource("4_bhwmw")
+max_polyphony = 2
+
+[node name="button_clicked_sound" type="AudioStreamPlayer" parent="sound"]
+stream = ExtResource("5_03uwf")
+max_polyphony = 2
+
+[connection signal="mouse_entered" from="Panel/VBoxContainer/VBoxContainer/Retry" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="Panel/VBoxContainer/VBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="mouse_entered" from="Panel/VBoxContainer/VBoxContainer/Main Menu" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="Panel/VBoxContainer/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
+[connection signal="mouse_entered" from="Panel/VBoxContainer/VBoxContainer/Quit" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="Panel/VBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

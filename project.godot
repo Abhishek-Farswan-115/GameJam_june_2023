@@ -14,6 +14,12 @@ config/name="GameJam"
 run/main_scene="res://Scenes/UI/main_menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+"<<<<<<<HEAD[debug]gdscript/warnings/narrowing_conversion"=0
+
+[autoload]
+
+ThemeSong="*res://Scenes/UI/theme_song.tscn"
+Global="*res://Autoloads/Global.gd"
 
 [debug]
 

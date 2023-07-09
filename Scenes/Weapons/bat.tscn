@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://masnh35hyeqm"]
+
+[ext_resource type="PackedScene" uid="uid://dnve81fm3xfls" path="res://Resources/GLTF_character/Bat.glb" id="1_vg678"]
+
+[node name="Bat" instance=ExtResource("1_vg678")]
+
+[node name="Skeleton3D" parent="BatArmature" index="0"]
+bones/1/position = Vector3(1.75889e-16, 0.257971, 0.00114931)
+bones/2/rotation = Quaternion(0.153704, 9.1889e-05, 9.07391e-05, 0.988117)
+bones/4/rotation = Quaternion(-0.00379525, -0.997232, -0.0742538, -0.000191358)
+bones/5/rotation = Quaternion(-0.691901, 0.00367124, -0.00190273, 0.72198)
+bones/8/rotation = Quaternion(-0.464702, -0.479056, -0.103147, 0.737508)
+bones/9/rotation = Quaternion(-0.25539, -0.0396263, -0.348135, 0.901115)
+bones/10/rotation = Quaternion(-0.324389, 0.307913, 0.146344, 0.882352)
+bones/11/rotation = Quaternion(-0.157797, 0.32563, 0.0391507, 0.931414)
+bones/13/rotation = Quaternion(-0.318339, -0.0424611, 0.350219, 0.879889)
+bones/14/rotation = Quaternion(0.309241, -0.202889, 0.207137, 0.905704)
+bones/15/rotation = Quaternion(-0.264967, 0.331325, 0.250447, 0.870226)
+bones/16/rotation = Quaternion(-0.144068, 0.340423, -0.0765929, 0.926008)
+bones/19/rotation = Quaternion(-0.102104, -0.142769, 0.63828, 0.749527)
+bones/22/rotation = Quaternion(-0.0333897, -0.126627, 0.661684, 0.738258)

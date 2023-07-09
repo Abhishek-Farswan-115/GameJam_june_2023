@@ -22,7 +22,8 @@ func _on_quit_button_pressed():
 
 func _on_start_button_pressed() -> void:
 	clicked_sound.play()
-	get_tree().change_scene_to_packed(preload("res://Scenes/Level/level.tscn"))
+	Global.load_scene(self, "game world")
+	await get_tree().create_timer(0.27).timeout
 
 
 func _on_settings_button_pressed() -> void:

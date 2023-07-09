@@ -8,6 +8,9 @@ script = ExtResource("2_bd0ai")
 move_speed = 7
 run_animation = "Sword_run"
 
+[node name="Armature" parent="." index="0"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
 [node name="Skeleton3D" parent="Armature" index="0"]
 bones/0/position = Vector3(-0.00103569, 0.6243, 0.00673929)
 bones/0/rotation = Quaternion(0.12622, -0.0334224, 0.0206959, 0.991223)
