@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3jbqbuh3guul"]
+[gd_scene load_steps=8 format=3 uid="uid://c3jbqbuh3guul"]
 
 [ext_resource type="Script" path="res://Scripts/game_over.gd" id="1_ito28"]
 [ext_resource type="SystemFont" path="res://Scenes/UI/new_system_font.tres" id="1_y2v6y"]
 [ext_resource type="Theme" uid="uid://crqddcmktcgn5" path="res://Scenes/UI/main_theme.tres" id="2_2kg7h"]
+[ext_resource type="AudioStream" uid="uid://bd0dd88ibsq35" path="res://Audio/UI/rollover5.ogg" id="4_bhwmw"]
+[ext_resource type="AudioStream" uid="uid://ucebh4e7gkes" path="res://Audio/UI/click5.ogg" id="5_03uwf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hk5lq"]
 bg_color = Color(0.65098, 0.85098, 0.721569, 0.364706)
@@ -45,9 +47,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 347.0
-offset_top = -17.0
+offset_top = 8.0
 offset_right = 765.0
-offset_bottom = 625.0
+offset_bottom = 583.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_hk5lq")
@@ -98,6 +100,19 @@ layout_mode = 2
 theme = ExtResource("2_2kg7h")
 text = "QUIT"
 
+[node name="sound" type="Node" parent="."]
+
+[node name="button_hover_sound" type="AudioStreamPlayer" parent="sound"]
+stream = ExtResource("4_bhwmw")
+max_polyphony = 2
+
+[node name="button_clicked_sound" type="AudioStreamPlayer" parent="sound"]
+stream = ExtResource("5_03uwf")
+max_polyphony = 2
+
+[connection signal="mouse_entered" from="Panel/VBoxContainer/VBoxContainer/Retry" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="Panel/VBoxContainer/VBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="mouse_entered" from="Panel/VBoxContainer/VBoxContainer/Main Menu" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="Panel/VBoxContainer/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
+[connection signal="mouse_entered" from="Panel/VBoxContainer/VBoxContainer/Quit" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="Panel/VBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
