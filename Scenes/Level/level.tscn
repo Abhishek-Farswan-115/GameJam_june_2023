@@ -21,12 +21,11 @@ script = ExtResource("2_4c5d5")
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 34.7207, 50.0498, 65.9757)
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 34.721, 20, 65.976)
 current = true
 size = 100.0
 script = ExtResource("3_33q64")
 speed = 0.3
-max_zoom = 100.0
 
 [node name="OnPath" type="Node3D" parent="."]
 

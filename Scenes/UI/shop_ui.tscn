@@ -44,7 +44,7 @@ corner_detail = 5
 Panel/styles/panel = SubResource("StyleBoxFlat_4d20m")
 VBoxContainer/constants/separation = 4
 
-[node name="Shop UI" type="CanvasLayer"]
+[node name="ShopUI" type="CanvasLayer"]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

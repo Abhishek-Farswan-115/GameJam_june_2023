@@ -13,14 +13,14 @@ var _adventurers: = [
 	preload("res://Scenes/Player/mage.tscn"),
 	preload("res://Scenes/Player/thief.tscn"),
 ]
-var gold: = 1000:
-	set(value):
-		gold = value
-		$ShopUI/Control/Label/Label.text = str(gold)
-		if gold < 0:
-			get_tree().change_scene_to_file("res://Scenes/UI/game_over.tscn")
 var wave_count: = 1
 
+@onready var gold: = 1000:
+	set(value):
+		gold = value
+		$ShopUI/Control/Label4.text = str(gold)
+		if gold < 0:
+			get_tree().change_scene_to_file("res://Scenes/UI/game_over.tscn")
 @onready var tower_selector: Node3D = $TowerSelector
 
 
