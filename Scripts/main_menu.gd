@@ -27,3 +27,5 @@ func _on_settings_button_pressed() -> void:
 	var setts:Control = preload("res://Scenes/UI/Settings_menu.tscn").instantiate()
 	add_child(setts)
 
+func _on_how_to_pressed():
+	get_tree().change_scene_to_file("res://Scenes/UI/player_guide.tscn")
