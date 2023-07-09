@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ui1j5glm0s23"]
+[gd_scene load_steps=6 format=3 uid="uid://chkfwsjakvstd"]
 
 [ext_resource type="Texture2D" uid="uid://bivqdspwbkf8e" path="res://Images/background.jpg" id="1_7jksx"]
 [ext_resource type="Script" path="res://Scripts/player_guide.gd" id="1_h4ev0"]
@@ -59,7 +59,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_h2kep")
 theme_override_font_sizes/font_size = 20
-text = "In the game, levels will be prodecurely generated. 
+text = "Movement: WASD / ↑ ↓ → ←
+Left Click to select and place defense
+Right Click to cancel selection
+
+In the game, levels will be prodecurely generated. 
 
 Your aim is to defend your loot from raiders.
 
