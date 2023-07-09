@@ -13,3 +13,7 @@ config_version=5
 config/name="GameJam"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+ThemeSong="*res://Scenes/UI/theme_song.tscn"
