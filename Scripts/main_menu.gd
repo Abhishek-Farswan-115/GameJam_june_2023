@@ -6,8 +6,6 @@ extends Control
 func _ready() -> void:
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
 
-func _process(delta: float) -> void:
-	pass
 
 func _on_button_mouse_entered() -> void:
 	hover_sound.pitch_scale = randf_range(0.98, 1.12)

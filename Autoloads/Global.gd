@@ -1,7 +1,7 @@
 extends Node
 
 const Game_scene = {
-	"game world" : "  "
+	"game world" : "" #add loading scene here
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -52,7 +52,5 @@ func load_scene(current_scene, next_scene):
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 
