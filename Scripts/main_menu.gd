@@ -20,8 +20,8 @@ func _on_quit_button_pressed():
 
 func _on_start_button_pressed() -> void:
 	clicked_sound.play()
+	Global.load_scene(self, "game world")
 	await get_tree().create_timer(0.27).timeout
-	pass
 
 func _on_settings_button_pressed() -> void:
 	clicked_sound.play()

@@ -17,3 +17,4 @@ config/icon="res://icon.svg"
 [autoload]
 
 ThemeSong="*res://Scenes/UI/theme_song.tscn"
+Global="*res://Autoloads/Global.gd"
