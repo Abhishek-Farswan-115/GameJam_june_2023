@@ -55,6 +55,26 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="Label4" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 792.0
+offset_top = 102.0
+offset_right = -106.0
+offset_bottom = -457.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_d1nar")
+theme_override_colors/font_color = Color(0.8, 0.717647, 0.388235, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "1000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
 [node name="Panel" type="Panel" parent="Control"]
 layout_mode = 0
 offset_top = 94.0
@@ -148,26 +168,6 @@ text = "500"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="Control/Label"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 693.0
-offset_top = -23.0
-offset_right = 782.0
-offset_bottom = -23.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("1_d1nar")
-theme_override_colors/font_color = Color(0.8, 0.717647, 0.388235, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
-text = "1000"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Label2" type="Label" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
@@ -209,6 +209,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Treasure-chest" type="Sprite2D" parent="."]
-position = Vector2(872, 136)
+position = Vector2(1087, 136)
 scale = Vector2(0.617188, 0.632813)
 texture = ExtResource("6_7ptds")

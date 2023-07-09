@@ -1,0 +1,98 @@
+[gd_scene load_steps=6 format=3 uid="uid://ui1j5glm0s23"]
+
+[ext_resource type="Texture2D" uid="uid://bivqdspwbkf8e" path="res://Images/background.jpg" id="1_7jksx"]
+[ext_resource type="Script" path="res://Scripts/player_guide.gd" id="1_h4ev0"]
+[ext_resource type="Theme" uid="uid://crqddcmktcgn5" path="res://Scenes/UI/main_theme.tres" id="2_h2kep"]
+[ext_resource type="AudioStream" uid="uid://bd0dd88ibsq35" path="res://Audio/UI/rollover5.ogg" id="4_4vp8p"]
+[ext_resource type="AudioStream" uid="uid://ucebh4e7gkes" path="res://Audio/UI/click5.ogg" id="5_hbuaq"]
+
+[node name="PlayerGuide" type="CanvasLayer"]
+script = ExtResource("1_h4ev0")
+
+[node name="Bg" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_7jksx")
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_right = 318.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HowTo" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 146.5
+offset_top = -33.0
+offset_right = -146.5
+offset_bottom = -527.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_h2kep")
+theme_override_colors/font_color = Color(0.886275, 0.662745, 0.439216, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "HOW TO PLAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 61.0
+offset_top = 88.0
+offset_right = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_h2kep")
+theme_override_font_sizes/font_size = 20
+text = "In the game, levels will be prodecurely generated. 
+
+Your aim is to defend your loot from raiders.
+
+Place the defense to defeat the raiders.
+
+Implementing defense will cost from your loot, so you have to implemet defense that you don't run out of your loot.
+
+Game will END when your ALL LOOT is gone, you can continue to play game untill all you loot is gone. 
+
+GOOD LUCK"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="back" type="Button" parent="Panel"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+offset_left = -229.0
+offset_top = 585.0
+offset_right = -29.0
+offset_bottom = 629.0
+theme = ExtResource("2_h2kep")
+text = "BACK"
+
+[node name="sound" type="Node" parent="."]
+
+[node name="button_hover_sound" type="AudioStreamPlayer" parent="sound"]
+stream = ExtResource("4_4vp8p")
+max_polyphony = 2
+
+[node name="button_clicked_sound" type="AudioStreamPlayer" parent="sound"]
+stream = ExtResource("5_hbuaq")
+max_polyphony = 2
+
+[connection signal="mouse_entered" from="Panel/back" to="." method="_on_back_mouse_entered"]
+[connection signal="pressed" from="Panel/back" to="." method="_on_back_pressed"]
