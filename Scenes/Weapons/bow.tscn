@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdwyakxhjle4"]
+
+[ext_resource type="PackedScene" uid="uid://dxhw5c8fd5ap5" path="res://Resources/GLTF_character/Bow.glb" id="1_lm2dv"]
+
+[node name="Bow" instance=ExtResource("1_lm2dv")]
+
+[node name="Arro" parent="bow_Stator/Bow_002" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1681, 0)
