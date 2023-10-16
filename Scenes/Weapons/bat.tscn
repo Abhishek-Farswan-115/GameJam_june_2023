@@ -1,21 +1,48 @@
-[gd_scene load_steps=2 format=3 uid="uid://masnh35hyeqm"]
+[gd_scene load_steps=7 format=3 uid="uid://10rubdnpqgu6"]
 
 [ext_resource type="PackedScene" uid="uid://dnve81fm3xfls" path="res://Resources/GLTF_character/Bat.glb" id="1_vg678"]
+[ext_resource type="Script" path="res://Scripts/weapon.gd" id="2_dbgiw"]
+[ext_resource type="PackedScene" uid="uid://cvwu674wxakuu" path="res://Scenes/Weapons/scanner.tscn" id="3_svdqc"]
+[ext_resource type="PackedScene" uid="uid://c2l88doqav3ig" path="res://Scenes/Weapons/attack_range_highlight.tscn" id="4_hjkiw"]
+[ext_resource type="AudioStream" uid="uid://c8j8q1yppmks7" path="res://Audio/Impact/footstep_grass_000.ogg" id="5_kc4i8"]
+[ext_resource type="PackedScene" uid="uid://bbk675itx7mby" path="res://Scenes/Weapons/weapon_area.tscn" id="6_ms53l"]
 
-[node name="Bat" instance=ExtResource("1_vg678")]
+[node name="Bat" node_paths=PackedStringArray("aim_tile") instance=ExtResource("1_vg678")]
+script = ExtResource("2_dbgiw")
+attack_speed = 0.5
+damage = 40
+aim_tile = NodePath("AttackRange/MeshInstance3D3")
 
 [node name="Skeleton3D" parent="BatArmature" index="0"]
-bones/1/position = Vector3(1.75889e-16, 0.257971, 0.00114931)
-bones/2/rotation = Quaternion(0.153704, 9.1889e-05, 9.07391e-05, 0.988117)
-bones/4/rotation = Quaternion(-0.00379525, -0.997232, -0.0742538, -0.000191358)
-bones/5/rotation = Quaternion(-0.691901, 0.00367124, -0.00190273, 0.72198)
-bones/8/rotation = Quaternion(-0.464702, -0.479056, -0.103147, 0.737508)
-bones/9/rotation = Quaternion(-0.25539, -0.0396263, -0.348135, 0.901115)
-bones/10/rotation = Quaternion(-0.324389, 0.307913, 0.146344, 0.882352)
-bones/11/rotation = Quaternion(-0.157797, 0.32563, 0.0391507, 0.931414)
-bones/13/rotation = Quaternion(-0.318339, -0.0424611, 0.350219, 0.879889)
-bones/14/rotation = Quaternion(0.309241, -0.202889, 0.207137, 0.905704)
-bones/15/rotation = Quaternion(-0.264967, 0.331325, 0.250447, 0.870226)
-bones/16/rotation = Quaternion(-0.144068, 0.340423, -0.0765929, 0.926008)
-bones/19/rotation = Quaternion(-0.102104, -0.142769, 0.63828, 0.749527)
-bones/22/rotation = Quaternion(-0.0333897, -0.126627, 0.661684, 0.738258)
+bones/1/position = Vector3(1.67737e-16, 0.244615, 0.00124478)
+bones/2/rotation = Quaternion(0.154856, -1.17771e-07, -1.84602e-08, 0.987937)
+bones/8/rotation = Quaternion(-0.4101, -0.42395, 0.155139, 0.792475)
+bones/9/rotation = Quaternion(0.0454648, -0.0924235, -0.08208, 0.991289)
+bones/10/rotation = Quaternion(-0.279169, 0.31837, 0.210017, 0.881248)
+bones/11/rotation = Quaternion(-0.183138, 0.366042, -0.130819, 0.902973)
+bones/13/rotation = Quaternion(-0.434379, -0.121154, 0.141665, 0.881231)
+bones/14/rotation = Quaternion(0.0693784, -0.181594, -0.0708526, 0.978361)
+bones/19/rotation = Quaternion(-0.104538, -0.133596, 0.67477, 0.718269)
+bones/22/rotation = Quaternion(-0.0350844, -0.124985, 0.68159, 0.720127)
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "Bat_Flying"
+
+[node name="AttackRange" type="Node3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8, 0)
+
+[node name="MeshInstance3D3" parent="AttackRange" index="0" instance=ExtResource("4_hjkiw")]
+skeleton = NodePath("")
+
+[node name="Scanner" parent="." index="3" instance=ExtResource("3_svdqc")]
+
+[node name="CollisionPolygon3D" parent="Scanner" index="0"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -1, 0)
+polygon = PackedVector2Array(-2, 3, -2, 1, 2, 1, 2, 3)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="4"]
+stream = ExtResource("5_kc4i8")
+
+[node name="WeaponArea" parent="." index="5" instance=ExtResource("6_ms53l")]
+
+[editable path="Scanner"]

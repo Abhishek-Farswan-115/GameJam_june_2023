@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://oxfajv14olet"]
+
+[ext_resource type="PackedScene" uid="uid://dn7l2niywyh2h" path="res://Resources/KayKit_DungeonRemastered/torch_lit.gltf.glb" id="1_4552t"]
+
+[node name="torch_lit_gltf" instance=ExtResource("1_4552t")]
+
+[node name="torch_lit" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.92591, 0)

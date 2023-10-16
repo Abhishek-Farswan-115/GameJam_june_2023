@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://tfp260l4alxq"]
+
+[ext_resource type="PackedScene" uid="uid://dvn3k7ipnwj1u" path="res://Resources/GLTF_character/mage.glb" id="1_et5s2"]
+[ext_resource type="Script" path="res://Scripts/adventurers/adventurer.gd" id="2_0f8bi"]
+
+[node name="mage" instance=ExtResource("1_et5s2")]
+script = ExtResource("2_0f8bi")
+move_speed = 5
+health = 50
+run_animation = "Wand_run"
+
+[node name="Armature" parent="." index="0"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bymetsf7vltnf"]
+
+[ext_resource type="Texture2D" uid="uid://bawirckd0io0j" path="res://Scenes/UI/barHorizontal_red_mid 200.png" id="1_1ax27"]
+
+[node name="EnemyHealthBar" type="TextureProgressBar"]
+offset_right = 200.0
+offset_bottom = 26.0
+value = 50.0
+texture_progress = ExtResource("1_1ax27")

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cvwu674wxakuu"]
+
+[node name="Scanner" type="Area3D"]
+transform = Transform3D(0.999848, 0, -0.0174524, 0, 1, 0, 0.0174524, 0, 0.999848, 0, 0, 0)
+collision_layer = 0
+monitorable = false
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -1, 0)
+depth = -2.0

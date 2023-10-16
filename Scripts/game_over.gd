@@ -13,7 +13,8 @@ func _on_quit_pressed():
 func _on_retry_pressed():
 	clicked_sound.play()
 	await get_tree().create_timer(0.10).timeout
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://Scenes/UI/main_menu.tscn")
+#	get_tree().reload_current_scene()
 
 
 func _on_main_menu_pressed():

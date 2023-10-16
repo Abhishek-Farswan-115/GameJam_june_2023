@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2toeogaie688"]
+
+[ext_resource type="PackedScene" uid="uid://d301236bpmsf1" path="res://Resources/GLTF_character/thief.glb" id="1_xcpxt"]
+[ext_resource type="Script" path="res://Scripts/adventurers/adventurer.gd" id="2_275ln"]
+
+[node name="Thief" instance=ExtResource("1_xcpxt")]
+script = ExtResource("2_275ln")
+health = 30
+run_animation = "Sword_run"
+
+[node name="Armature" parent="." index="0"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
